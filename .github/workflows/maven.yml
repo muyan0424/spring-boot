@@ -25,12 +25,17 @@ jobs:
 
     name: 扫描任务-${{ matrix.app }}-${{ matrix.jdkVersion }}
     runs-on: ubuntu-latest
+    outputs:
+      output1: hahaha
     needs: job1
     if: startsWith('Hello world', 'He')
     
     steps:
-      - name: stepname-${{ matrix.app }}-${{ matrix.jdkVersion }}
-        run: echo "scan app ${{ matrix.app }}-${{ matrix.jdkVersion }}"
+      - id: step-${{ matrix.app }}-${{ matrix.jdkVersion }}
+        name: stepname-${{ matrix.app }}-${{ matrix.jdkVersion }}
+        run: ｜
+          echo "scan app ${{ matrix.app }}-${{ matrix.jdkVersion }}"
+          echo "test=hello" >> "$GITHUB_OUTPUT"
     
   build_app:
     
