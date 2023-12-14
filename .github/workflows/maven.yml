@@ -12,7 +12,7 @@ on: push
 
 jobs:
   build_app:
-    name: build app job name ${{ matrix.app }}-${{ matrix.jdkVersion }}
+    name: 构建任务-${{ matrix.app }}-${{ matrix.jdkVersion }}
     strategy:
       matrix:
         app: ["app1","app2","appm"]
