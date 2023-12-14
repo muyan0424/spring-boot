@@ -19,6 +19,8 @@ jobs:
         jdkVersion: ["1.8", "1.9"]
         
     runs-on: ubuntu-latest
+    if: startsWith('Hello world', 'Hi')
     
     steps:
-      - run: echo "build app ${{ matrix.app }}-${{ matrix.jdkVersion }}"
+      - name: stepname-${{ matrix.app }}-${{ matrix.jdkVersion }}
+        run: echo "build app ${{ matrix.app }}-${{ matrix.jdkVersion }}"
