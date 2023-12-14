@@ -23,7 +23,7 @@ jobs:
         app: ["app1","app2","appm"]
         jdkVersion: ["1.8", "1.9"]
 
-    name: 构建任务-${{ matrix.app }}-${{ matrix.jdkVersion }}
+    name: 扫描任务-${{ matrix.app }}-${{ matrix.jdkVersion }}
     runs-on: ubuntu-latest
     needs: job1
     if: startsWith('Hello world', 'He')
