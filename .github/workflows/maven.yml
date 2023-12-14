@@ -19,7 +19,7 @@ jobs:
         jdkVersion: ["1.8", "1.9"]
         
     runs-on: ubuntu-latest
-    if: startsWith('Hello world', 'Hi')
+    if: startsWith('Hello world', 'He')
     
     steps:
       - name: stepname-${{ matrix.app }}-${{ matrix.jdkVersion }}
