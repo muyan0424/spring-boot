@@ -19,7 +19,6 @@ jobs:
         app: ["app1","app2","appm"]
         
     runs-on: ubuntu-latest
-    if: ${{ matrix.app }} == 'app1'
     
     steps:
-      - run: echo "muyan test ${{ matrix.app }}-${{ matrix.os }}-${{ matrix.version }}"
+      - run: echo "build app ${{ matrix.app }}-${{ matrix.os }}-${{ matrix.version }}"
