@@ -11,14 +11,21 @@ name: Java CI with Maven
 on: push
 
 jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "this is job1"　; exit 1
+    
   build_app:
-    name: 构建任务-${{ matrix.app }}-${{ matrix.jdkVersion }}
+    
     strategy:
       matrix:
         app: ["app1","app2","appm"]
         jdkVersion: ["1.8", "1.9"]
-        
+
+    name: 构建任务-${{ matrix.app }}-${{ matrix.jdkVersion }}
     runs-on: ubuntu-latest
+    needs: job1
     if: startsWith('Hello world', 'He')
     
     steps:
