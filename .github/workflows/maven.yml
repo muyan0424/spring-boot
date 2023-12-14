@@ -11,14 +11,14 @@ name: Java CI with Maven
 on: push
 
 jobs:
-  buildapp-muyan:
+  build_app:
+    name: build app job name ${{ matrix.app }}-${{ matrix.jdkVersion }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest] # Defining Ubuntu and Windows OS
-        version: [10, 12, 14]
         app: ["app1","app2","appm"]
+        jdkVersion: ["1.8", "1.9"]
         
     runs-on: ubuntu-latest
     
     steps:
-      - run: echo "build app ${{ matrix.app }}-${{ matrix.os }}-${{ matrix.version }}"
+      - run: echo "build app ${{ matrix.app }}-${{ matrix.jdkVersion }}"
