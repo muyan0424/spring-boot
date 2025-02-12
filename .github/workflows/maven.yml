@@ -36,6 +36,7 @@ jobs:
         run: ｜
           echo "scan app ${{ matrix.app }}-${{ matrix.jdkVersion }}"
           echo "test=hello" >> "$GITHUB_OUTPUT"
+          exit 1
     
   build_app:
     
